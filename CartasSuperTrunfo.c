@@ -48,6 +48,6 @@ int main(int argc, char const *argv[])
          printf("Total de pontos turisticos: %d\n",ponttur);
         
     printf("**********************************************\n");   
-    printf("  CADASTRO DA CARTA EFETUADO COM SUCESSO ! ");
+    printf("  CADASTRO DA CARTA EFETUADO COM SUCESSO ! \n");
     return 0;
 }
