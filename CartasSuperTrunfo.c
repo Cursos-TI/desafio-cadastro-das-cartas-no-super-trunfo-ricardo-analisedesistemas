@@ -49,10 +49,10 @@ int main(int argc, char const *argv[])
          printf("Total de pontos turisticos: %d\n",ponttur);
          
          densidade = (float) pop / area;//calculo densidade demografica usando castting para calcular valores entre tipos diferentes de variaveis
-         printf("Densidade demografica: %2.f\n",densidade);
+         printf("Densidade demografica: %2.fhabitantes por km2\n",densidade);
          
          rendaper = (float) pib / pop; //calculo renda per capita
-         printf("Renda per Capita: %2.f\n",rendaper);
+         printf("Renda per Capita: R$ %2.f por ano\n",rendaper);
          
 
     printf("**********************************************\n");   
