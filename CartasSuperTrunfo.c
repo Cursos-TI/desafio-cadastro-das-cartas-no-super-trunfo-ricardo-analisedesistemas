@@ -58,7 +58,7 @@ int main(int argc, char const *argv[])
     printf("**********************************************\n");   
     printf("***CADASTRO DA CARTA EFETUADO COM SUCESSO!**** \n");
     printf("**********************************************\n");
-    printf("---------ESCOLHA, COMAPRE E VENCA!------------\n");
+    printf("---------ESCOLHA, COMPARE E VENCA!------------\n");
     printf("----------------------------------------------\n");
     printf("----------S U P E R---T R U N F O-------------\n");
     return 0;
