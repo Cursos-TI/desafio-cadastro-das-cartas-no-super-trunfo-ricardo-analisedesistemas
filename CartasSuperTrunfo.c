@@ -1,65 +1,104 @@
-#include <stdio.h>
-#include<string.h>
+#include<stdio.h>
 int main(int argc, char const *argv[])
 {
-    char idcarta[2]= "";//foi preferencia pessoal referenciar essa variavel ESTADO a um ID atribuido ao  campo ESTADO de cada carta cadastrada
-    char codcarta[5]= "";
-    char nomecidade[40];
-    int  pop;
-    float area;
-    float pib;
-    float densidade;
-    float rendaper;
+     char estado1; //char sem um array de bytes
+     char codigocarta1[6];
+     char nomecidade1[50];
+     int populacao1;
+     float area1;
+     float pib1;
+     int pontotur1;
+     float densdemo1;
+     float rendper1;
+
+     char estado2;
+     char codigocarta2[6];
+     char nomecidade2[50];
+     int populacao2;
+     float area2;
+     float pib2;
+     int pontotur2;
+     float densdemo2;
+     float rendper2;
+
+
+     printf("********CADASTRO DAS CARTAS JOGO SUPER TRUNFO********\n");
+     
+     printf("\n");
+     
+     printf("Entre com a letra de identificacao (de A ate H): ");
+     scanf("%c",&estado1); //usei o modificador %c para caractere numa variavel tipo char sem array
+     printf("Digite o codigo da carta: ");
+     scanf("%4s",codigocarta1);
+     printf("Entre com o nome da cidade: ");//só adicionei esse recurso porque estava dando muito estouro enquanto eu testava o codigo
+     scanf(" %49[^\n]",nomecidade1); //para que possa ser digitado um nome composto com ate 49 caracteres antes da quebra
+     printf("Qual o total de habitantes?: ");
+     scanf("%d",&populacao1);
+     printf("Qual a area(em km2)?: ");
+     scanf("%f",&area1);
+     printf("Qual o PIB?: ");
+     scanf("%f",&pib1);
+     printf("Quantos pontos turisticos existem nessa cidade?: ");
+     scanf("%d",&pontotur1);
+
+     densdemo1 = populacao1 / area1;
+     rendper1 = pib1 / populacao1;
+     
+     while (getchar() != '\n');//limpeza de buffer caso contraraio os dois primeiros campos se concatenam e não épossivel digitat a letra para o Estado
+     
+     printf("\n");
+
+     printf("******Pronto para cadastrar a segunda carta?******\n");
+     
+     printf("\n");
+     
+     printf("Entre com a letra de identificacao (de A ate H): ");
+     scanf("%c",&estado2); //usei o modificador %c para caractere
+     printf("Digite o codigo da carta: ");
+     scanf("%4s",codigocarta2);
+     printf("Entre com o nome da cidade: ");//só adicionei esse recurso porque estava dando muito estouro enquanto eu testava o codigo
+     scanf(" %49[^\n]",nomecidade2); //para que possa ser digitado um nome composto com ate 49 caracteres antes da quebra
+     printf("Qual o total de habitantes?: ");
+     scanf("%d",&populacao2);
+     printf("Qual a area(em km2)?: ");
+     scanf("%f",&area2);
+     printf("Qual o PIB?: ");
+     scanf("%f",&pib2);
+     printf("Quantos pontos turisticos existem nessa cidade?: ");
+     scanf("%d",&pontotur2);
+
+     densdemo2 = populacao2 / area2;//calculo para densidade demografica
+     rendper2 = pib2 / populacao2;//calculo para renda per capita
+
+    printf("\nCarta 1:\n");
+    printf("Estado: %c\n", estado1);
+    printf("Código: %s\n", codigocarta1);
+    printf("Nome da Cidade: %s\n", nomecidade1);
+    printf("População: %d\n", populacao1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB: %.2f bilhões de reais\n", pib1);
+    printf("Densidade Demográfica: %.2f hab/km²\n", densdemo1);
+    printf("Renda Per Capita: R$ %.2f\n", rendper1);
+    printf("Número de Pontos Turísticos: %d\n", pontotur1);
     
-    int ponttur;
-
-    printf("***********************************************\n");
-    printf("****CADASTRO PARA CARTAS JOGO SUPER TRUNFO*****\n");
-    printf("***********************************************\n");
-       printf("Digite o ID do ESTADO: ");
-       scanf("%1s",idcarta);
-              
-       printf("Digite o Codigo da Carta: ");                                      
-       scanf("%4s",codcarta);
-       while (getchar() != '\n');  //para limpar buffer antes da inicilização da var nomecidade
-                                   //caso contrario  o printf a seguir nao aparece como proxima opção a ser digitada pelo usuário
-       printf("Qual o nome da cidade?: ");
-       fgets(nomecidade, sizeof(nomecidade), stdin);  //foi usado porque o desafio mostrou como exemplo de resultado de saída de dados "Nome da cidade" com string composta
-       nomecidade[strcspn(nomecidade, "\n")] = '\0';  //comando colocado para que o sistema não de um espaço muito grande entre o campo atual e o proximo, a fim de que seja mostrada ao usuario linha a linha a informação
-       
-       printf("Qual o numero total de habitantes?: ");
-       scanf("%d",&pop); //digitar uma valor inteiro sem casas decimais variavel int
-       
-       printf("Qual a extensao territorial?: ");
-       scanf("%f",&area); //digitar a respectiva area podendo colocar . e até 2 casas decimais para entrar com km2 de forma precisa
-       printf("Qual o PIB em Bilhoes de Reais?: ");
-       scanf("%f",&pib); //para que o resultado do calculo seja o correto, deve-se representar integralmente o valor em todas as suas casas preenchendo com zeros
-       
-       printf("Quantos pontos turisticos ha?: ");
-       scanf("%d",&ponttur);//não altera a formatação em relação ao desafio NOVATO
-      
-    printf("**********************************************\n");
-
-         printf("ID-ESTADO: %s \n",idcarta);
-         printf("Codigo da Carta: %s\n",codcarta);
-         printf("Cidade: %s\n",nomecidade);
-         printf("Populacao: %d habitantes\n",pop);
-         printf("Extensao Territorial: %.2fkm2\n",area);
-         printf("PIB: R$ %.f Bilhoes\n",pib);
-         printf("Total de pontos turisticos: %d\n",ponttur);
-         
-         densidade = (float) pop / area;//calculo densidade demografica usando castting para calcular valores entre tipos diferentes de variaveis
-         printf("Densidade demografica: %2.f habitantes por km2\n",densidade);
-         
-         rendaper = (float) pib / pop; //calculo renda per capita
-         printf("Renda per Capita: R$ %2.f por ano\n",rendaper);
-         
-
-    printf("**********************************************\n");   
-    printf("***CADASTRO DA CARTA EFETUADO COM SUCESSO!**** \n");
-    printf("**********************************************\n");
-    printf("---------ESCOLHA, COMPARE E VENCA!------------\n");
-    printf("----------------------------------------------\n");
-    printf("----------S U P E R---T R U N F O-------------\n");
+    printf("\nCarta 2:\n");
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigocarta2);
+    printf("Nome da Cidade: %s\n", nomecidade2);
+    printf("População: %d\n", populacao2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB: %.2f bilhões de reais\n", pib2);
+    printf("Densidade Demográfica: %.2f hab/km²\n", densdemo2);
+    printf("Renda Per Capita: R$ %.2f\n", rendper2);
+    printf("Número de Pontos Turísticos: %d\n", pontotur2);
+    
+    while (getchar() != '\n');
+    
+    printf("\n");
+    printf("******CADASTRO REALIZADO COM SUCESSO!!******\n");
+    printf("\n");
+    printf("******Escolha, Compare e Vença!******");
+    printf("\n");
+    printf("            SUPER TRUNFO      \n");
     return 0;
 }
