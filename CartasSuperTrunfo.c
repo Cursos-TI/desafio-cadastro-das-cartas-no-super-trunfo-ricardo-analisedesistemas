@@ -46,7 +46,7 @@ int main(int argc, char const *argv[])
      scanf("%d",&populacao1);
      printf("Qual a area(em km2)?: ");
      scanf("%f",&area1);
-     printf("Qual o PIB?: ");
+     printf("Qual o PIB? (digite o valor integral sem usar pontos ou vírgula): ");
      scanf("%lld",&pib1);
      printf("Quantos pontos turisticos existem nessa cidade?: ");
      scanf("%d",&pontotur1);
@@ -68,7 +68,7 @@ int main(int argc, char const *argv[])
      scanf("%d",&populacao2);
      printf("Qual a area(em km2)?: ");
      scanf("%f",&area2);
-     printf("Qual o PIB?: ");
+     printf("Qual o PIB? (digite o valor integral sem usar pontos ou vírgula): ");
      scanf("%lld",&pib2);
      printf("Quantos pontos turisticos existem nessa cidade?: ");
      scanf("%d",&pontotur2);
