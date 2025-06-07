@@ -133,8 +133,12 @@ int main(int argc, char const *argv[])
     printf("PIB Resultado = %d\n",pib1 > pib2);
 
     printf("Pontos Turisticos Resultado = %d\n",pontotur1 > pontotur2);
-
-    printf("Densidade Demografica Inversa Resultado = %d\n", densdinversa1 < densdinversa2);//usado aqui o operador menor para verificar a o menor valor entre esses atributos
+    
+    //densidade demográfica representa o total de pessoas por km2, vence quem tem a menor densidade com o resultado!
+    printf("Densidade Demográfica Resultado = %d\n",densdemo1 < densdemo2);
+    
+    //densidade inversa representa quantidade de area disponivel por pessoa, então vence a carta que tem o maior valor
+    printf("Densidade Demografica Inversa Resultado = %d\n", densdinversa1 > densdinversa2);//usado aqui o operador menor para verificar a o menor valor entre esses atributos
     
     printf("PIB per Capita Resultado = %d\n",rendper1 > rendper2);
 
