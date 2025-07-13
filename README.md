@@ -1,4 +1,5 @@
 JESUS É BOM!! DEUS É MARAVILHOSO, sou Ricardo Dametto. Estudante do curso de Analise e Desenvolvimento de Sistemas!
+
 ESTA PASTA QUE CONTÉM ESSES ARQUIVOS PERTENCE AO REPOSITÓRIO: https://github.com/Cursos-TI/desafio-cadastro-das-cartas-no-super-trunfo-ricardo-analisedesistemas.git
 
 # Desafio Super Trunfo - Países - Cadastro das Cartas - Atualizado: 21/02
